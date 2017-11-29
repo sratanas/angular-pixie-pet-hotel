@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href=“https://fonts.googleapis.com/css?family=Comfortaa” rel=“stylesheet”>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <h1>Pixie Pet Hotel</h1>
+    <h2>Owners and Pets</h1>
+    <div id="ownerDiv">
+        <h3>Owner Registration</h2>
+        <span>First Name <input id="firstNameInput" type="text" placeholder="text"></span>
+        <span>Last Name <input id="lastNameInput" type="text" placeholder="text"></span>
+        <button id="registerButton">Register</button>
+    </div>
+    <div id="petDiv">
+        <h3>Pets</h2>
+        <span>Owner Name 
+            <select name="Owner Name" id="ownerName">
+                <!-- Below is an example of an Owner Names; actual values will be appended:
+                <option value="exampleLastNameFirstName">exampleFirstName exampleLastName</option> -->
+            </select>
+        </span>
+        <span>Pet Name <input id="petNameInput" type="text" placeholder="text"></span>
+        <span>Breed <input id="breedInput" type="text" placeholder="text"></span>
+        <span>Color <input id="colorInput" type="text" placeholder="text"></span>
+        <button id="addPetButton">Add Pet</button>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Owner</th>
+                <th>Pet</th>
+                <th>Breed</th>
+                <th>Color</th>
+                <th>Update</th>
+                <th>Delete</th>
+                <th>Check In/Out</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+            <!-- Append over this -->
+            <tr>
+                <td>Rubius Hagrid</td>
+                <!-- When appending pet, breed, and color, put them in as an input field with the specific text 
+                    you want displayed as the placeholder. -->
+                <td><input type="text" placeholder="Norbert"></td>
+                <td><input type="text" placeholder="Norwegian Ridgeback"></td>
+                <td><input type="text" placeholder="Grey"></td>
+                <td class="goButton">Go</td>
+                <td class="deleteButton">Delete</td>
+                <td class="inButton">In</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
