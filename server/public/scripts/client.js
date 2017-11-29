@@ -7,7 +7,7 @@ $(document).ready(function() {
 
 
 
-
+    $('#registerButton').on('click', addUser);    
 
 
 
@@ -68,20 +68,20 @@ function addPet() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+function addUser() {
+    $.ajax({
+        url: '/pets/users',
+        type: 'POST',
+        data: {
+            firstName: $('#firstNameInput').val(),
+            lastName: $('#lastNameInput').val()
+        },
+        success: function(response){
+          console.log( 'response to add pet POST req: ', response );
+          getUserPetTable();
+        }
+    });
+} 
 
 
 
