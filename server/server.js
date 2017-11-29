@@ -12,6 +12,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //run static files
 app.use(express.static('server/public'));
 
+app.use('/pets', route);
+
 app.listen(port, function () {
     console.log('listening on port ', port);
 });
