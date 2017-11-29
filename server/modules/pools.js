@@ -1,7 +1,7 @@
 var pg = require('pg');
 
 var config = {
-    database: 'INSERT DATABASE NAME HERE',
+    database: 'pixie_pet_hotel',
     host: 'localhost',
     port: 5432,
     max: 10,
