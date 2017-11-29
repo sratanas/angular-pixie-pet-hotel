@@ -12,7 +12,7 @@ router.get('/', function (req, res) { // get request called on ready and when yo
         } else {
             //connected to database
             db.query(`SELECT owners.first_name, owners.last_name, owners.id, pets.pet_name, pets.breed, pets.color, pets.id  FROM pets
-            LEFT JOIN owners ON pets.owner_id = owners.id;`, function (errorMakingQuery, result) {
+            JOIN owners ON pets.owner_id = owners.id;`, function (errorMakingQuery, result) {
                 done();
                 if (errorMakingQuery) {
                     console.log('error making query', errorMakingQuery);
