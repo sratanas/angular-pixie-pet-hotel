@@ -44,7 +44,7 @@ router.get('/users', function (req, res) { //get request will be called when you
     });
 });
 
-router.post('/new', function (req, res) {
+router.post('/git', function (req, res) {
     pool.connect(function (err, db, done) {
         if (err) {
             //error connecting to database
