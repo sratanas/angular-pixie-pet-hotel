@@ -3,7 +3,9 @@ console.log("JS Sourced")
 $(document).ready(function() {
     console.log('jQ sourced');
     getUserPetTable();
-    
+    $('#addPetButton').on('click', addPet);
+
+
 
 
 
@@ -33,7 +35,23 @@ function appendToDomTable(ownerPetObject) {
     $('#tableBody').append($newOwnerPet);
 }
 
-
+// on click of addPetButton, this will post new pet to server and run getUserPetTable()
+function addPet() {
+    $.ajax({
+        url: '/pets/new',
+        type: 'POST',
+        data: {
+            pet_name: $('#petNameInput').val(),
+            breed: $('#breedInput').val(),
+            color: $('#colorInput').val(),
+            owner_id: $('#ownerId').data().id
+        },
+        success: function(response){
+          console.log( 'response to add pet POST req: ', response );
+          getUserPetTable();
+        } // end success
+    }); // end ajax POST
+} // end addPet()
 
 
 
@@ -97,3 +115,4 @@ function deletePet() {
         }
     })
 }
+
