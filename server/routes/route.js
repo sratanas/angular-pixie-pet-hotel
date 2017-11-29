@@ -3,7 +3,7 @@ var router = express.Router();
 var pool = require('../modules/pools');
 
 
-router.get('/', function (req, res) {
+router.get('/', function (req, res) { // get request called on ready and when you submit a pet name
     pool.connect(function (err, db, done) {
         if (err) {
             //error connecting to database
@@ -24,7 +24,7 @@ router.get('/', function (req, res) {
     });
 });
 
-router.get('/users', function (req, res) {
+router.get('/users', function (req, res) { //get request will be called when you submit only a name
     pool.connect(function (err, db, done) {
         if (err) {
             //error connecting to database
