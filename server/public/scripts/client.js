@@ -30,13 +30,17 @@ function getUserPetTable() {
 function appendToDomTable(ownerPetObject) {
     var $newOwnerPet = $('<tr></tr>');
     $newOwnerPet.append(`<td>${ownerPetObject.first_name} ${ownerPetObject.last_name}</td>
-                        <td>${ownerPetObject.pet_name}</td><td>${ownerPetObject.breed}</td><td><${ownerPetObject.color}</td>`);
+                        <td>${ownerPetObject.pet_name}</td><td>${ownerPetObject.breed}</td><td>${ownerPetObject.color}</td>
+                        <td><button class="goButton">Go</button></td>
+                        <td><button class="deleteButton">Delete</button></td>
+                        <td><button class="inButton">In</button></td>`);
     $newOwnerPet.data('id', ownerPetObject.id)
     $('#tableBody').append($newOwnerPet);
 }
 
 // on click of addPetButton, this will post new pet to server and run getUserPetTable()
 function addPet() {
+    console.log('in addPet()');
     $.ajax({
         url: '/pets',
         type: 'POST',
