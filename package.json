@@ -17,5 +17,10 @@
   "bugs": {
     "url": "https://github.com/tsteffenhagen/team-pixie-pet-hotel/issues"
   },
-  "homepage": "https://github.com/tsteffenhagen/team-pixie-pet-hotel#readme"
+  "homepage": "https://github.com/tsteffenhagen/team-pixie-pet-hotel#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "pg": "^7.4.0"
+  }
 }
