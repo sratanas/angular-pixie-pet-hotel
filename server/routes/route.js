@@ -11,7 +11,7 @@ router.get('/', function (req, res) { // get request called on ready and when yo
             res.sendStatus(500);
         } else {
             //connected to database
-            db.query(`SELECT owners.first_name, owners.last_name, owners.id, pets.pet_name, pets.breed, pets.color  FROM pets
+            db.query(`SELECT owners.first_name, owners.last_name, owners.id, pets.pet_name, pets.breed, pets.color, pets.id  FROM pets
             JOIN owners ON pets.owner_id = owners.id;`, function (errorMakingQuery, result) {
                 done();
                 if (errorMakingQuery) {
@@ -64,6 +64,29 @@ router.post('/', function (req, res) {
         }
     });
 });
+
+router.post('/users', function (req, res) {
+    pool.connect(function (err, db, done) {
+        if (err) {
+            //error connecting to database
+            console.log('there was an error connecting: ', err);
+            res.sendStatus(500);
+        } else {
+            //connected to database
+            db.query(`INSERT INTO owners("first_name", "last_name")
+            VALUES ($1,$2)`,[req.body.firstName, req.body.lastName], function (errorMakingQuery, result) {
+                done();
+                if (errorMakingQuery) {
+                    console.log('error making query', errorMakingQuery);
+                } else {
+                    res.sendStatus(201);
+                }
+            });
+        }
+    });
+});
+
+
 
 // router.put('/:id', function (req, res) {
 //     pool.connect(function (err, db, done) {
