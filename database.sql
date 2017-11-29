@@ -12,3 +12,5 @@ CREATE TABLE pets (
 	owner_id INT REFERENCES owners
 	);
 	
+ALTER TABLE pets
+ADD checked_in BOOLEAN;
