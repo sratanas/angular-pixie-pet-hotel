@@ -108,7 +108,7 @@ function deletePet() {
 
     var petIdToRemove = $('#ownderId').data('id');
     $.ajax({
-        url: '/pets',
+        url: '/pets/' + petIdToRemove,
         method: 'DELETE',
         success: function (response) {
             getUserPetTable();

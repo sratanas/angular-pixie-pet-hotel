@@ -109,25 +109,25 @@ router.post('/users', function (req, res) {
 // });
 
 
-// router.delete('/:id', function (req, res) {
-//     pool.connect(function (err, db, done) {
-//         if (err) {
-//             //error connecting to database
-//             console.log('there was an error connecting: ', err);
-//             res.sendStatus(500);
-//         } else {
-//             //connected to database
-//             db.query(`QUERY HERE`, function (errorMakingQuery, result) {
-//                 done();
-//                 if (errorMakingQuery) {
-//                     console.log('error making query', errorMakingQuery);
-//                 } else {
-//                     res.sendStatus(201);
-//                 }
-//             });
-//         }
-//     });
-// });
+router.delete('/:id', function (req, res) {
+    pool.connect(function (err, db, done) {
+        if (err) {
+            //error connecting to database
+            console.log('there was an error connecting: ', err);
+            res.sendStatus(500);
+        } else {
+            //connected to database
+            db.query(`DELETE from PETS WHERE id =$1`,[req.params.id], function (errorMakingQuery, result) {
+                done();
+                if (errorMakingQuery) {
+                    console.log('error making query', errorMakingQuery);
+                } else {
+                    res.sendStatus(201);
+                }
+            });
+        }
+    });
+});
 
 
 module.exports = router;
