@@ -8,9 +8,11 @@ h1 {
     height: 100px; */
     font-family: Tahoma, Verdana, Segoe, sans-serif;
     padding: 20px;
+    padding-bottom: 0px;
     letter-spacing: 5px;
     color: rgb(245, 7, 165);
     font-size: 70px;
+    margin-bottom: 0px;
     -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
     -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
     -webkit-animation-iteration: infinite;
@@ -36,14 +38,21 @@ h1 {
     100% {color: green;}
 }
 
+#subtitle {
+    color: rgb(245, 7, 165);
+    margin-left: 25px;
+
+}
+
 h2 {
     font-family: Tahoma, Verdana, Segoe, sans-serif;    
 }
 
+
 #ownerDiv{
     background-color: rgb(0, 204, 255);
     padding: 20px;
-    width:90%;
+    width:60%;
     margin:15px;
     font-family: Tahoma, Verdana, Segoe, sans-serif;   
 }
@@ -51,7 +60,7 @@ h2 {
 #petDiv{
     background-color: yellow;
     padding: 20px;
-    width:90%;
+    width:70%;
     margin:15px;
     font-family: Tahoma, Verdana, Segoe, sans-serif;   
 }
