@@ -12,7 +12,7 @@ $(document).ready(function() {
 
 
 
-    $(body).on('click', '.deleteButton', deletePet);
+    $('#tableBody').on('click', '.deleteButton', deletePet);
     getUserNames();
 })
 
@@ -38,7 +38,7 @@ function appendToDomTable(ownerPetObject) {
 // on click of addPetButton, this will post new pet to server and run getUserPetTable()
 function addPet() {
     $.ajax({
-        url: '/pets/new',
+        url: '/pets',
         type: 'POST',
         data: {
             pet_name: $('#petNameInput').val(),
@@ -97,7 +97,7 @@ function getUserNames() {
     })
 }
 
-function appendOwndersToDom(ownerObject) {
+function appendOwnersToDom(ownerObject) {
     var $newOwner = $('<option></option>')
     $newOwner.append(`${ownerObject.first_name} ${ownerObject.last_name}`)
     $newOwner.data('id', ownerObject.id);
@@ -108,7 +108,7 @@ function deletePet() {
 
     var petIdToRemove = $('#ownderId').data('id');
     $.ajax({
-        url: '/pets',
+        url: '/pets/' + petIdToRemove,
         method: 'DELETE',
         success: function (response) {
             getUserPetTable();

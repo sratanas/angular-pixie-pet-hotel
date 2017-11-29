@@ -9,8 +9,7 @@ CREATE TABLE pets (
 	pet_name VARCHAR (25),
 	breed VARCHAR (25),
 	color VARCHAR (25),
-	owner_id INT REFERENCES owners
+	owner_id INT REFERENCES owners,
+	checked_in BOOLEAN DEFAULT FALSE
 	);
 	
-ALTER TABLE pets
-ADD checked_in BOOLEAN;
