@@ -38,7 +38,7 @@ function appendToDomTable(ownerPetObject) {
 // on click of addPetButton, this will post new pet to server and run getUserPetTable()
 function addPet() {
     $.ajax({
-        url: '/pets/new',
+        url: '/pets',
         type: 'POST',
         data: {
             pet_name: $('#petNameInput').val(),
