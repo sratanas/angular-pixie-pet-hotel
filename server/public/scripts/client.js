@@ -12,7 +12,7 @@ $(document).ready(function() {
 
 
 
-    $(body).on('click', '.deleteButton', deletePet);
+    $('#tableBody').on('click', '.deleteButton', deletePet);
     getUserNames();
 })
 
@@ -97,7 +97,7 @@ function getUserNames() {
     })
 }
 
-function appendOwndersToDom(ownerObject) {
+function appendOwnersToDom(ownerObject) {
     var $newOwner = $('<option></option>')
     $newOwner.append(`${ownerObject.first_name} ${ownerObject.last_name}`)
     $newOwner.data('id', ownerObject.id);
