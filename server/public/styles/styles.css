@@ -1,0 +1,76 @@
+body{
+    background-color: black;
+}
+
+
+h1 {
+    /* width: 100px;
+    height: 100px; */
+    font-family: Tahoma, Verdana, Segoe, sans-serif;
+    padding: 20px;
+    padding-bottom: 0px;
+    letter-spacing: 5px;
+    color: rgb(245, 7, 165);
+    font-size: 70px;
+    margin-bottom: 0px;
+    -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+    -webkit-animation-iteration: infinite;
+    animation-name: example;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    text-transform: uppercase;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes example {
+    0%   {color: rgb(245, 7, 165);}
+    25%  {color: yellow;}
+    50%  {color: rgb(0, 204, 255);}
+    100% {color: green;}
+}
+
+/* Standard syntax */
+@keyframes example {
+    0%   {color: rgb(245, 7, 165);}
+    25%  {color: yellow;}
+    50%  {color: rgb(0, 204, 255);}
+    100% {color: green;}
+}
+
+#subtitle {
+    color: rgb(245, 7, 165);
+    margin-left: 25px;
+
+}
+
+h2 {
+    font-family: Tahoma, Verdana, Segoe, sans-serif;    
+}
+
+
+#ownerDiv{
+    background-color: rgb(0, 204, 255);
+    padding: 20px;
+    width:60%;
+    margin:15px;
+    font-family: Tahoma, Verdana, Segoe, sans-serif;   
+}
+
+#petDiv{
+    background-color: yellow;
+    padding: 20px;
+    width:70%;
+    margin:15px;
+    font-family: Tahoma, Verdana, Segoe, sans-serif;   
+}
+
+table {
+    background-color: rgb(245, 7, 165);
+    padding: 15px;
+    width:90%;
+    margin:15px;
+    font-family: Tahoma, Verdana, Segoe, sans-serif;
+    border-style: solid;
+    border: 1px;
+}
