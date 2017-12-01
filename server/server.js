@@ -8,6 +8,7 @@ var app = express();
 
 //middleware
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 //run static files
 app.use(express.static('server/public'));

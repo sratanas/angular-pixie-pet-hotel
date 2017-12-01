@@ -1,31 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="PetHotelApp">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link href=“https://fonts.googleapis.com/css?family=Comfortaa” rel=“stylesheet”>
-    <script src="./vendors/jquery-3.2.1.min.js"></script>
+    <title>Welcome to the Pixie Pet Hotel</title>
+    <script src="vendors/angular.js"></script>
     <script src="./scripts/client.js"></script>
     <link rel="stylesheet" href="styles/styles.css">
 </head>
-<body>
+
+<body ng-controller="PixieController as vm">
     <h1>Pixie Pet Hotel</h1>
-    <h2 id = "subtitle"><i>THE</i> place for your pets to chill out.</h2>
+    <h2 id="subtitle">
+        <i>THE</i> place for your pets to chill out.</h2>
+
     <div id="ownerDiv">
-        <h3>Owner Registration</h2>
-        <span>First Name <input id="firstNameInput" type="text" placeholder="text"></span>
-        <span>Last Name <input id="lastNameInput" type="text" placeholder="text"></span>
-        <button id="registerButton">Register</button>
+        <input type = "text" ng-model="vm.newOwner.first_name" placeholder = "first name">
+        <input type = "text" ng-model="vm.newOwner.last_name"  placeholder = "last name">
+        <button ng-click = "vm.addNewOwners(vm.newOwner)">Submit</button>
+
+
     </div>
     <div id="petDiv">
+        <label for="chooseOwner"> Choose an owner: </label>
+        <select name="chooseOwner" id="chooseOwner" ng-model="data.model">
+        <option ng-repeat="owners in vm.ownersArray" value="{{vm.ownersArray.id}}">{{vm.ownersArray.last_name}}</option>
+              </select>
+        <br>
+        <input type = "text" ng-model="vm.newPet.pet_name" placeholder = "Pet Name">
+        <input type = "text" ng-model="vm.newPet.breed"  placeholder = "breed">
+        <input type = "text" ng-model="vm.newPet.color"  placeholder = "Color">
+        <label>Check in Pet</label>
+        <input type = "checkbox" ng-model = "vm.newPet.checked_in" >
+        <button ng-click = "vm.addNewPets(vm.newPet)">Submit</button>
+
+    </div>
+    
+    <div id = "infoDisplay" ng-repeat="all in vm.allArray">
+        {{all}}
+
+    </div>
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div id="petDiv">
         <h3>Pets</h2>
         <span>Owner Name 
             <select name="Owner Name" id="ownerId">
-                <!-- Below is an example of an Owner Names; actual values will be appended:
+                 Below is an example of an Owner Names; actual values will be appended:
                 <option value="exampleLastNameFirstName">exampleFirstName exampleLastName</option> -->
-            </select>
+<!-- </select>
         </span>
         <span>Pet Name <input id="petNameInput" type="text" placeholder="text"></span>
         <span>Breed <input id="breedInput" type="text" placeholder="text"></span>
@@ -44,13 +80,13 @@
                 <th>Check In/Out</th>
             </tr>
         </thead>
-        <tbody id="tableBody">
-            <!-- Append over this -->
-            <tr>
-                <td>Rubius Hagrid</td>
-                <!-- When appending pet, breed, and color, put them in as an input field with the specific text 
+        <tbody id="tableBody"> -->
+<!-- Append over this -->
+<!-- <tr>
+                <td>Rubius Hagrid</td> -->
+<!-- When appending pet, breed, and color, put them in as an input field with the specific text 
                     you want displayed as the placeholder. -->
-                <td><input type="text" placeholder="Norbert"></td>
+<!-- <td><input type="text" placeholder="Norbert"></td>
                 <td><input type="text" placeholder="Norwegian Ridgeback"></td>
                 <td><input type="text" placeholder="Grey"></td>
                 <td><button class="goButton">Go</button></td>
@@ -58,6 +94,6 @@
                 <td><button class="inButton">In</button></td>
             </tr>
         </tbody>
-    </table>
-</body>
-</html>
+    </table> -->
+<!-- </body>
+</html> -->

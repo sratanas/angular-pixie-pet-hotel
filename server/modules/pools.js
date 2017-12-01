@@ -1,7 +1,7 @@
 var pg = require('pg');
 
 var config = {
-    database: 'pixie_pet_hotel',
+    database: 'pixie_pet_hotel_new',
     host: 'localhost',
     port: 5432,
     max: 10,
